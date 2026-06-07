@@ -1,0 +1,21 @@
+{
+  "brand": "Colonel Fatboy",
+  "products": {
+    "rubs": ["The Colonel's Magic Dust", "Sweet and Savoury Pork Rub", "Flavour Dust Blend", "Rosemary Salt"],
+    "books": ["10 Steps to BBQ Greatness Volume 1", "BBQ Greatness Vol.2"]
+  },
+  "stockists": [
+    { "name": "Wagga Meat Supply", "town": "Wagga Wagga", "status": "active", "type": "Butcher" },
+    { "name": "DJ's Family Butchery", "town": "Yass", "status": "active", "type": "Butcher" },
+    { "name": "Franklin Butchery", "town": "Tumut", "status": "active", "type": "Butcher" },
+    { "name": "TMD Tattoo", "town": "Tumut", "status": "active", "type": "Specialty" },
+    { "name": "Bungendore Country Butchery", "town": "Bungendore", "status": "active", "type": "Butcher" },
+    { "name": "Gunning Butchery", "town": "Gunning", "status": "active", "type": "Butcher" },
+    { "name": "Gundaroo Grocer and Cork Street Cellars", "town": "Gundaroo", "status": "active", "type": "Grocer" },
+    { "name": "Braidwood Butcher", "town": "Braidwood", "status": "active", "type": "Butcher" },
+    { "name": "Cootamundra Butchery", "town": "Cootamundra", "status": "active", "type": "Butcher" },
+    { "name": "Old Canberra Inn", "town": "Canberra", "status": "proving", "type": "Pub and Venue" },
+    { "name": "Lake Village Butchery", "town": "Lake Albert", "status": "pipeline", "type": "Butcher" },
+    { "name": "Eagle Hawk Hotel", "town": "Sutton", "status": "pipeline", "type": "Pub and Venue" }
+  ]
+}
