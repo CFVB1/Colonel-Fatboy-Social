@@ -1,0 +1,45 @@
+name: Generate post
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "What to make"
+        type: choice
+        options: [shoutout, hunt]
+        default: shoutout
+      target:
+        description: "Shoutout: a stockist or town. Hunt: who to reach and where."
+        type: string
+        default: "Wagga Meat Supply"
+      platform:
+        description: "Where it is headed"
+        type: choice
+        options: [Instagram, Facebook, Both]
+        default: Both
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        uses: actions/checkout@v4
+
+      - name: Generate the post pack
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODE: ${{ inputs.mode }}
+          TARGET: ${{ inputs.target }}
+          PLATFORM: ${{ inputs.platform }}
+        run: python3 scripts/generate.py
+
+      - name: Save the draft back to the repo
+        run: |
+          git config user.name "Colonel Fatboy Engine"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/drafts
+          git commit -m "New post pack" || echo "Nothing new to commit"
+          git push
